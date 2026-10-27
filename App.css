@@ -431,3 +431,83 @@ body {
 .btn-checkout:hover {
   background: #388e3c;
 }
+
+/* ===== Cart container (required class name) ===== */
+.cart-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 36px 24px 60px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cart-container h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 28px;
+}
+
+/* ===== Cart item controls (required class names) ===== */
+.cart-item-increment,
+.cart-item-decrement {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #4caf50;
+  background: white;
+  color: #2e7d32;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.cart-item-increment:hover,
+.cart-item-decrement:hover {
+  background: #e8f5e9;
+}
+
+.cart-item-quantity {
+  font-weight: 600;
+  min-width: 24px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* ===== Delete button (required class name) ===== */
+.cart-item-delete {
+  background: #ffebee;
+  border: 1px solid #ef9a9a;
+  color: #c62828;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cart-item-delete:hover {
+  background: #ffcdd2;
+}
+
+/* ===== Continue Shopping button (required class name) ===== */
+.get-started-button {
+  padding: 12px 28px;
+  border: 2px solid #4caf50;
+  background: white;
+  color: #2e7d32;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.get-started-button:hover {
+  background: #e8f5e9;
+}

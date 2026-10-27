@@ -1,8 +1,8 @@
-# Paradise-Nursery-Shopping-Application
+# e-plantShopping
 
 Project Overview
 
-Paradise Nursery is a dynamic React-based e-commerce web application that allows users to browse a curated collection of houseplants, add them to a shopping cart, and manage their selections before checkout.
+e-plantShopping is a dynamic React-based e-commerce web application that allows users to browse a curated collection of houseplants, add them to a shopping cart, and manage their selections before checkout.
 
 Features
 Landing Page – Welcoming hero section with company name and a "Get Started" button
@@ -19,7 +19,7 @@ React Router DOM
 CSS3
 
 # Project Structure
-paradise-nursery/
+e-plantShopping/
 ├── public/
 ├── src/
 │   ├── store/

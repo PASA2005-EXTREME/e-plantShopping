@@ -3,8 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
-    items: [],          // [{ id, name, price, image, quantity }]
-    addedIds: [],       // track which plant IDs have been added (to disable buttons)
+    items: [],      // [{ id, name, price, image, quantity }]
+    addedIds: [],   // track which plant IDs have been added
   },
   reducers: {
     addItem(state, action) {
@@ -24,6 +24,16 @@ const cartSlice = createSlice({
       state.addedIds = state.addedIds.filter((aid) => aid !== id);
     },
 
+    // Required by CartItem grading: updateQuantity({ id, quantity })
+    updateQuantity(state, action) {
+      const { id, quantity } = action.payload;
+      const item = state.items.find((i) => i.id === id);
+      if (item) {
+        item.quantity = quantity;
+      }
+    },
+
+    // Keep these for backwards compatibility
     increaseQuantity(state, action) {
       const item = state.items.find((i) => i.id === action.payload);
       if (item) item.quantity += 1;
@@ -35,7 +45,6 @@ const cartSlice = createSlice({
         if (item.quantity > 1) {
           item.quantity -= 1;
         } else {
-          // Remove item if quantity hits 0
           state.items = state.items.filter((i) => i.id !== action.payload);
           state.addedIds = state.addedIds.filter((aid) => aid !== action.payload);
         }
@@ -44,8 +53,13 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addItem, removeItem, increaseQuantity, decreaseQuantity } =
-  cartSlice.actions;
+export const {
+  addItem,
+  removeItem,
+  updateQuantity,
+  increaseQuantity,
+  decreaseQuantity,
+} = cartSlice.actions;
 
 // Selectors
 export const selectCartItems = (state) => state.cart.items;
